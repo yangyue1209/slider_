@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .slider {
+            max-width:750px;
+            margin: 0 auto;
+        }
+        ul,
+        ol {
+            list-style: none;
+
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            height: 0;
+            line-height: 0;
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .contianer {
+            width: 100%;
+        }
+
+        .contianer .banner {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #ccc;
+        }
+
+        .contianer ul li {
+            float: left;
+        }
+
+        .contianer ol {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contianer ol li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-right: 10px;
+        }
+
+        .contianer ol li.now {
+            background-color: red;
+        }
+
+        .contianer a {
+            display: block;
+            width: 100%;
+        }
+
+        .contianer img {
+            display: block;
+            width: 100%;
+        }
+
+        .contianer .gt,
+        .contianer .lt {
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .3);
+            line-height: 40px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            top: 50%;
+            margin-top: -20px;
+            z-index: 22;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .contianer span.gt {
+            right: 20px;
+        }
+
+        .contianer span.lt {
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <!--  下面的代码动态创建  注意 如果需要使用  contianer  和banner 需要固定类名 
+             lt和gt必须有   ol 和 ul 为动态创建  
+              如果改变id需要改变对应的css与js代码  采用前后各加一张假的图片进行无缝切换 技术  流式布局 可以适应不同的移动端屏幕分辨率
+               如果想更改最大的显示宽度可以在css中 修改slider容器的max-width -->
+        <div class="contianer">
+            <div class="banner">
+                <!-- <span class="lt">&lt;</span> -->
+                <ul class="clearfix">
+                    <li><a href="javascript:;"><img src="./images/banner10.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner1.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner2.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner3.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner4.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner5.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner6.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner7.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner8.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner9.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner10.jpg" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="./images/banner1.jpg" alt=""></a></li>
+                </ul>
+                <!-- <span class="gt">&gt;</span> -->
+                <ol class="clearfix">
+                    <li class="now"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/mobile.js"></script>
+</body>
+
+</html>
